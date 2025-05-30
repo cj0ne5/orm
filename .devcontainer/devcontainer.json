@@ -5,9 +5,10 @@
 	"dockerComposeFile": "docker-compose.yaml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
-	"forwardPorts": [5432],
+	"forwardPorts": [5432,8080],
 	"portsAttributes": {
 		"5432": {"label": "PostgreSQL port", "onAutoForward": "silent"}
+		,"8080": {"label": "pgAdmin", "onAutoForward": "silent"}
 	},
 	// Configure tool-specific properties.
 	"customizations": {

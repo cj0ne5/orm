@@ -19,6 +19,10 @@ django.setup()
 # Import your models for use in your script
 from db.models import *
 
+from faker import Faker
+
+myfake = Faker()
+
 ############################################################################
 ## START OF APPLICATION
 ############################################################################
@@ -37,10 +41,15 @@ GRANT ALL ON SCHEMA public TO postgres, public;
 
 ... then migrate again, and re-create your superuser
 """
-
+'''
 # Seed a few users in the database
 User.objects.create(name='Dan')
 User.objects.create(name='Robert')
 
 for u in User.objects.all():
     print(f'ID: {u.id} \tUsername: {u.name}')
+'''
+
+
+#Place.objects.filter(name="Leonard LLC").count()  # Indexed query
+Place.objects.filter(name__iexact="Leonard LLC").count()
